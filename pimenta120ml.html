@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pimenta Vermelha Artesanal</title>
+
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #ffffff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      max-width: 1000px;
+      margin: auto;
+      flex-wrap: wrap;
+    }
+
+    .pimenta-img {
+      width: 100%;
+      max-width: 250px;
+      border-radius: 5px;
+    }
+
+    .info {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    h1 {
+      color: #d62828;
+      margin-top: 0;
+    }
+
+    .btn-comprar {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      background-color: #b90000;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .btn-comprar:hover {
+      background-color: #128c7e;
+    }
+
+    .secao {
+      margin-top: 20px;
+    }
+
+    .secao h2 {
+      color: #f77f00;
+      font-size: 20px;
+    }
+
+    .secao ul {
+      padding-left: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .pimenta-img {
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .info {
+        width: 100%;
+        text-align: center;
+      }
+
+      .btn-comprar {
+        width: 100%;
+        font-size: 18px;
+        padding: 14px;
+      }
+
+      .secao ul {
+        text-align: left;
+      }
+      
+    }
+
+    header {
+  background-color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #d62828, #f77f00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #d62828;
+  bottom: -4px;
+  left: 0;
+  transition: 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  nav a {
+    margin-left: 15px;
+  }
+}
+.card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card-container a.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+    .card {
+      background-color: #ffffff;
+      border: none;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgb(253, 253, 253);
+      flex: 1 1 calc(33.333% - 40px);
+      max-width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgb(255, 226, 226);
+    }
+
+    .card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 14px;
+      color: #777;
+      border-top: 1px solid #eee;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+  <div class="logo">Thupyna</div>
+  <nav>
+    <a href="index.html#produtos">Produtos</a>
+    <a href="index.html#feedback">Feedbacks</a>
+    <a href="index.html#sobre">Sobre</a>
+    <a href="index.html#contato">Contato</a>
+  </nav>
+</header>
+
+
+  <div class="container">
+    <img src="pote120ml.jpeg" alt="Pimenta Vermelha" class="pimenta-img">
+
+    <div class="info">
+      <h1>Pimenta Vermelha Artesanal</h1>
+      <p>Molho apimentado com sabor forte e marcante, ideal para carnes, petiscos e pratos brasileiros. Fermentação natural e produção 100% artesanal.</p>
+
+      <div class="secao">
+        <h2>Especificações</h2>
+        <ul>
+          <li>Nível de ardência: 🔥🔥🔥</li>
+          <li>Ingredientes: Pimenta vermelha, alho, vinagre de maçã, sal marinho</li>
+          <li>Volume: 120ml</li>
+        </ul>
+      </div>
+
+      <div class="secao">
+        <h2>Precauções de uso</h2>
+        <ul>
+          <li>Evite contato com os olhos</li>
+          <li>Conserve refrigerado após aberto</li>
+          <li>Use pequenas quantidades por vez</li>
+          <li>Manter fora do alcance de crianças</li>
+        </ul>
+      </div>
+     <a class="btn-comprar" href="https://wa.me/+5579996583969?text=Gostei%20desse%20aqui!" target="_blank">
+  Entrar em contato</a>
+    </div>
+      </a>
+    </div>
+  </div>
+</div>
+<section style="margin-top: 60px;">
+  <h2 style="color: #ad2828; text-align: center;">Veja também</h2>
+  <div class="card-container">
+    <a href="pimenta200ml.html" class="card">
+      <img src="pote200ml.jpeg" alt="Pote 200ML">
+      <h3>Pote 200ML</h3>
+      <p>Molho apimentado com sabor adocicado marcante, ideal para pão, pratos brasileiros.</p>
+      <p>R$33,00</p>
+    </a>
+
+    <a href="pimenta240ml.html" class="card">
+      <img src="pote240ml.jpeg" alt="Pote 240ML">
+      <h3>Pote 240ML</h3>
+      <p>Molho apimentado com sabor forte entre as fortes, ideal para cabra veio que gosta de uma boa pimenta.</p>
+      <p>R$39,00</p>
+    </a>
+  </div>
+</section>
+
+</section>
+
+<footer>
+    <p>© 2025 Thupyna • Todos os direitos reservados.</p>
+  </footer>
+
+
+</body>
+</html>
