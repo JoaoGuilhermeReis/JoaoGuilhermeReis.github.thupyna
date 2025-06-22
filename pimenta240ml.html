@@ -195,14 +195,61 @@ nav a:hover::after {
       color: #444;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
-      color: #777;
-      border-top: 1px solid #eee;
-    }
+   
 
+    .footer {
+  background-color: #fef2ec;
+  color: #222;
+  padding: 40px 20px 20px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-col h3,
+.footer-col h4 {
+  color: #d62828;
+  margin-bottom: 10px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #333;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+  color: #d62828;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #777;
+}
   </style>
 </head>
 <body>
@@ -270,9 +317,35 @@ nav a:hover::after {
 
 </section>
 
-<footer>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Thupyna 🌶️</h3>
+      <p>Molhos artesanais com sabor e qualidade. Feito com carinho no Brasil.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Links Rápidos</h4>
+      <ul>
+        <li><a href="index.html#produtos">Produtos</a></li>
+        <li><a href="index.html#feedback">Feedbacks</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <p>Email: <a href="mailto:thupynagoes@gmail.com">thupynagoes@gmail.com</a></p>
+      <p>Instagram: <a href="https://instagram.com/thupyna" target="_blank">@Thupyna</a></p>
+      <p>WhatsApp: <a href="https://wa.me/+5579996583969" target="_blank">Clique aqui</a></p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
     <p>© 2025 Thupyna • Todos os direitos reservados.</p>
-  </footer>
+  </div>
+</footer>
 
 
 </body>
