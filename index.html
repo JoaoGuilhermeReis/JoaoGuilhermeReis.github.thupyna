@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thupyna</title>
+  <title>Pimenta Artesanal</title>
   <style>
     * {
       margin: 0;
@@ -82,10 +82,16 @@
       gap: 20px;
       justify-content: center;
     }
+    .card-container a.card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 
     .card {
       background-color: #ffffff;
-      border-radius: 0px;
+      border: none;
       padding: 20px;
       box-shadow: 0 4px 12px rgb(253, 253, 253);
       flex: 1 1 calc(33.333% - 40px);
@@ -126,37 +132,30 @@
     }
 
     .destaque {
-      background-image: url("telamaior.jpeg");
-      background-size: cover;
-      background-position: center;
-      padding: 120px 20px;
-      color: white;
-      text-align: center;
-    }
+  background-image: url("telamaior.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  position: relative;
+  transition: opacity 0.8s ease, filter 0.8s ease;
+}
 
-    .conteudo-destaque {
-      max-width: 800px;
-      margin: auto;
-      background: rgba(0, 0, 0.5, 0.3);
-      padding: 40px;
-      border-radius: 10px;
-    }
+.destaque::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.0);
+}
 
-    .botao-destaque {
-      display: inline-block;
-      margin-top: 20px;
-      background-color: #ff6600;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
+.destaque.hidden {
+  opacity: 0.3;
+  filter: blur(5px);
+}
 
-    .botao-destaque:hover {
-      background-color: #c92b2b;
-    }
+.conteudo-destaque {
+  display: none; /* Esconde o conteúdo */
+}
+
 
     @media (max-width: 768px) {
       .card {
@@ -230,8 +229,130 @@
     #popup button:hover {
       background-color: #c92b2b;
     }
+    
+#feedback {
+  background-color: #ffffff;
+  padding: 60px 20px;
+}
+
+#feedback h2 {
+  text-align: flex;
+  color: #d62828;
+  margin-bottom: 30px;
+}
+
+.feedback-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: flex-start;
+}
+
+.feedback-card {
+  background-color: #ffffff;
+  border: 2px solid #d8d8d8; 
+  border-radius: 0%;
+  padding: 20px;
+  max-width: 320px;
+  flex: 1 1 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+
+.feedback-card:hover {
+  transform: scale(1.03);
+  background-color: #ffffff;
+}
+
+.feedback-card h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #111;
+}
+
+.feedback-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+#instagram {
+  background-color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#instagram h2 {
+  color: #d62828;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+#instagram p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.instagram-feed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.instagram-feed a {
+  display: block;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 0%;
+  transition: transform 0.3s ease;
+}
+
+.instagram-feed a:hover {
+  transform: scale(1.05);
+}
+
+.instagram-feed img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: white;
+  font-size: 32px;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 999;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+
   </style>
 </head>
+<a href="https://wa.me/+5579996583969" 
+   class="whatsapp-button" 
+   target="_blank" 
+   aria-label="Chamar no WhatsApp">
+  <img src="whatsapp.png" alt="zapzap" style="width: 100%; height: 100%;">
+</a>
+
 <body>
   <div id="popup">
     <div class="box">
@@ -248,60 +369,114 @@
     <div class="logo">Thupyna</div>
     <nav>
       <a href="#produtos">Produtos</a>
+      <a href="#feedback">Feedbacks</a>
       <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </nav>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   </header>
 
   <main>
     <section class="destaque">
-      <div class="conteudo-destaque">
-        <h2>Sabores intensos direto da roça</h2>
-        <p>Conheça nossos molhos artesanais feitos com ingredientes naturais.</p>
-        <a href="#produtos" class="botao-destaque">Ver produtos</a>
-      </div>
-    </section>
+  <div class="conteudo-destaque">
+    <h2>Sabores intensos artesanal</h2>
+    <p>Conheça nossos molhos artesanais feitos com ingredientes naturais.</p>
+    <a href="#produtos" class="botao-destaque">Conheça nossa historia</a>
+  </div>
+</section>
 
-    <section id="produtos">
-      <h2>Nossos Produtos</h2>
-      <div class="card-container">
-        <div class="card">
-          <img src="pote120ml.jpeg" alt="Pimenta artesanal 1">
-          <h3>Pote 120ML</h3>
-          <p>Ideal para experimentar ou dar de presente.</p>
-          <p>R$25,00</p>
-        </div>
-        <div class="card">
-          <img src="pote200ml.jpeg" alt="Pimenta artesanal 2">
-          <h3>Pote 200ML</h3>
-          <p>Equilíbrio entre intensidade e praticidade.</p>
-          <p>R$33,00</p>
-        </div>
-        <div class="card">
-          <img src="pote240ml.jpeg" alt="Pimenta artesanal 3">
-          <h3>Pote 240ML</h3>
-          <p>Para quem não vive sem um toque de fogo no prato.</p>
-          <p>R$39,00</p>
-        </div>
-      </div>
-    </section>
+<section id="produtos">
+  <h2>Nossos Produtos</h2>
+  <div class="card-container">
+    <a href="pimenta120ml.html" class="card">
+      <img src="pote120ml.jpeg" alt="Pote 120ML">
+      <h3>Pote 120ML</h3>
+      <p>Ideal para experimentar ou dar de presente.</p>
+      <p>R$25,00</p>
+    </a>
+    
+    <a href="pimenta200ml.html" class="card">
+      <img src="pote200ml.jpeg" alt="Pote 200ML">
+      <h3>Pote 200ML</h3>
+      <p>Equilíbrio entre intensidade e praticidade.</p>
+      <p>R$33,00</p>
+    </a>
+
+    <a href="pimenta240ml.html" class="card">
+      <img src="pote240ml.jpeg" alt="Pote 240ML">
+      <h3>Pote 240ML</h3>
+      <p>Para quem não vive sem um toque de fogo no prato.</p>
+      <p>R$39,00</p>
+    </a>
+  </div>
+</section>
+
+
+    <section id="feedback">
+  <h2>Feedbacks</h2>
+  <div class="feedback-container">
+    <div class="feedback-card">
+      <h3>Fabiane Justo</h3>
+      <p>Oxente que pimenta boa!</p>
+      <p>Estou levando para todos os lugares.</p>
+      <p>⭐⭐⭐⭐⭐</p>
+    </div>
+    <div class="feedback-card">
+      <h3>Guilherme Reis</h3>
+      <p>Muito boa a pimenta, quem fez o site também deve ser muito habilidoso haha</p>
+      <p>Pimenta boa da pé!!</p>
+      <p>⭐⭐⭐⭐⭐</p>
+    </div>
+    <div class="feedback-card">
+      <h3>Ana Maria Braga</h3>
+      <p>Solta os cachorros que essa pimenta é muito boa!!!</p>
+      <p>Louro José adorou.</p>
+
+      <p>⭐⭐⭐⭐⭐</p>
+    </div>
+
+    
+</section>
+
 
     <section id="sobre">
       <h2>Sobre Nós</h2>
-      <p>Somos apaixonados por sabores intensos e únicos. Produzimos molhos de pimenta artesanal com muito cuidado e dedicação, sempre utilizando ingredientes frescos e de alta qualidade. Nossos produtos são ideais para quem ama um toque picante na comida!</p>
+      <p>A Thupyna é uma marca dedicada a trazer o melhor dos sabores picantes para a sua mesa. Nossos molhos são feitos com ingredientes frescos e naturais, sem conservantes ou aditivos artificiais.</p>
+      <p>Nosso objetivo é proporcionar uma experiência única de sabor, combinando tradição e inovação em cada pote.</p>
     </section>
+
+   <section id="instagram">
+  <h2>Acompanhe nosso Instagram</h2>
+  <p>Lançamentos | Novidades | Promoções</p>
+  <div class="instagram-feed">
+    <a href="https://www.instagram.com/p/DKSr1USuZFh/" target="_blank">
+      <img src="Midia1.jpeg" alt="Midia1">
+    </a>
+    <a href="https://www.instagram.com/p/DIY-F9KOLGM/" target="_blank">
+      <img src="midia2.jpeg" alt="Midia2">
+    </a>
+    <a href="https://www.instagram.com/p/DKkil4lOPxI/" target="_blank">
+      <img src="midia3.jpeg" alt="Midia3">
+    </a>
+    <a href="https://www.instagram.com/p/DIZCV7tOSzP/" target="_blank">
+      <img src="midia4.jpeg" alt="Midia4">
+    </a>
+  </div>
+</section>
 
     <section id="contato">
       <h2>Contato</h2>
-      <p>Email: <a href="mailto:contato@pimentartesanal.com.br">contato@pimentartesanal.com.br</a></p>
-      <p>Instagram: <a href="https://instagram.com/pimentartesanal" target="_blank">@pimentartesanal</a></p>
-    </section>
+      <p>Email: <a href="mailto:contato@thupyna.com.br">thupynagoes@gmail.com</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/thupyna/" target="_blank">@Thupyna</a></p>
+      <p>WhatsApp: <a href="https://wa.me/+5579996583969" target="_blank">79996583969</a>
+    </p>
+  </section>
   </main>
 
   <footer>
-    <p>© 2025 Pimenta Artesanal • Todos os direitos reservados.</p>
+    <p>© 2025 Thupyna • Todos os direitos reservados.</p>
   </footer>
-<button id="whatsapp-btn" onclick="window.open('https://wa.me/5599999999999', '_blank')" aria-label="Entrar em contato pelo WhatsApp">💬</button>
+<button id="whatsapp-btn" onclick="window.open('https://wa.me/+5579996583969', '_blank')" aria-label="Entrar em contato pelo WhatsApp">💬</button>
 
   <script>
     const popup = document.getElementById('popup');
@@ -311,7 +486,16 @@
       popup.classList.add('hidden');
     });
 
-    
+    const destaque = document.querySelector('.destaque');
+
+  window.addEventListener('scroll', () => {
+    const limite = 100;
+    if (window.scrollY > limite) {
+      destaque.classList.add('hidden');
+    } else {
+      destaque.classList.remove('hidden');
+    }
+  });
   </script>
 
   
